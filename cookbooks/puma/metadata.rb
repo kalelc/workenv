@@ -1,0 +1,5 @@
+name "puma"
+maintainer "Andres Colonia"
+maintainer_email "andreskal@gmail.com"
+description "configure, start, restart and stop Puma"
+version "1.0.0"

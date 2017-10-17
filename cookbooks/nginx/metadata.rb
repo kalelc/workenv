@@ -1,0 +1,5 @@
+name "nginx"
+maintainer "Andres Colonia"
+maintainer_email "andreskal@gmail.com"
+description "Install nginx"
+version "1.0.0"

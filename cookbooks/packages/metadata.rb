@@ -1,0 +1,5 @@
+name 'packages'
+maintainer 'Andres Colonia'
+maintainer_email 'andreskal@gmail.com'
+license 'all_rights'
+version '1.0.0'

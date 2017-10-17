@@ -1,0 +1,9 @@
+default['puma']['file'] = 'config/puma.rb'
+default['puma']['folders'] = %w(log sockets pids)
+default['puma']['workers'] = normal['puma']['workers']
+default['puma']['threads'] = normal['puma']['threads']
+default['puma']['bind'] = "#{normal['sockets']}/puma.sock"
+default['puma']['pid'] = "#{normal['pids']}/puma.pid"
+default['puma']['state'] = "#{normal['pids']}/puma.state"
+default['puma']['stdout'] = "#{normal['logs']}/puma.stdout.log"
+default['puma']['stderr'] = "#{normal['logs']}/puma.stderr.log"

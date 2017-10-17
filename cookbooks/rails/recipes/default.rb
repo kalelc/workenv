@@ -1,0 +1,3 @@
+#
+# Cookbook:: rails
+# Recipe:: default

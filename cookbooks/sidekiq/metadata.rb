@@ -1,0 +1,6 @@
+name 'sidekiq'
+maintainer 'Andres Colonia'
+maintainer_email 'andreskal@gmail.com'
+license 'all_rights'
+description 'configure, start, restart and sidekiq'
+version '1.0.0'
