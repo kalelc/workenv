@@ -6,7 +6,7 @@ cpus = 2
 swap_size= 512
 
 # Path where you have app code
-host_app = "/Users/andres/workspace/ruby/rails"
+host_app = "/Users/andres/workspace/ruby/beetrack"
 # Virtual Machine home path
 virtual_home = "/home/ubuntu"
 # Vritual machine app path
@@ -47,16 +47,16 @@ Vagrant.configure("2") do |config|
   config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = 'cookbooks'
     chef.add_recipe "instance::configure"
-    chef.add_recipe "packages::essential"
-    chef.add_recipe "packages::extra"
-    chef.add_recipe "nginx::install"
-    chef.add_recipe "nginx::configure"
-    chef.add_recipe "rails::rbenv"
-    chef.add_recipe "rails::install"
-    chef.add_recipe 'app::deploy'
-    chef.add_recipe 'databases::mongodb'
-    chef.add_recipe 'puma::configure'
-    chef.add_recipe 'puma::start'
+    # chef.add_recipe "packages::essential"
+    # chef.add_recipe "packages::extra"
+    # chef.add_recipe "nginx::install"
+    # chef.add_recipe "nginx::configure"
+    # chef.add_recipe "rails::rbenv"
+    # chef.add_recipe "rails::install"
+    # chef.add_recipe 'app::deploy'
+    # chef.add_recipe 'databases::mongodb'
+    # chef.add_recipe 'puma::configure'
+    # chef.add_recipe 'puma::start'
 
     chef.json = {
       "user" => "ubuntu",

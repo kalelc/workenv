@@ -3,11 +3,11 @@
 # Recipe:: configure
 #
 # add bashrc to bash_profile
-execute "echo '[[ -r ~/.bashrc ]] && . ~/.bashrc' > .bash_profile" do
-  user node.normal["user"]
-  group node.normal["user"]
-  cwd node.normal["home"]
-  action :run
+template "#{node.normal['home']}/.bash_profile" do
+  source "bash_profile.erb"
+  owner node.normal['user']
+  group node.normal['user']
+  mode 0775
 end
 
 # add environment
