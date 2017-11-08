@@ -2,9 +2,17 @@
 # Cookbook:: instance
 # Recipe:: configure
 #
-# add bashrc to bash_profile
+# use template to overwrite .bash_profile
 template "#{node.normal['home']}/.bash_profile" do
   source "bash_profile.erb"
+  owner node.normal['user']
+  group node.normal['user']
+  mode 0775
+end
+
+# vim template
+template "#{node.normal['home']}/.vimrc" do
+  source "vimrc.erb"
   owner node.normal['user']
   group node.normal['user']
   mode 0775

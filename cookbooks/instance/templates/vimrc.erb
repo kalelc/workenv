@@ -1,0 +1,42 @@
+" #### config tabs and space by files ###"
+" tabstop: Number of spaces a tab counts for
+" shiftwidth: Width to shift on indent operations
+" expandtab: Use space instead of tabs in insert-mode
+
+set nocompatible
+set smartindent
+set autoindent
+set smarttab
+set expandtab
+set number
+set keywordprg=:help                " Command to execute with `K`
+syntax on
+filetype indent on
+
+" ### set filetypes ###
+
+autocmd FileType html        setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType css         setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType javascript  setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType ruby        setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType eruby       setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType yaml        setlocal shiftwidth=2 tabstop=2 expandtab
+
+" ### higlights ###
+
+" angle-brackets
+set matchpairs+=<:>
+
+" extraspaces
+highlight ExtraWhitespace ctermbg=1 guibg=red
+highlight Cursor guifg=white
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" set tags+=.git/tags;.tags           " Store tags with each project
+set foldmethod=indent               " Fold by indentation-level
+set foldnestmax=3                   " Number of nested folds
+set nofoldenable                    " Don´t fold when opening files
