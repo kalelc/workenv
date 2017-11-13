@@ -16,6 +16,9 @@ virtual_app = "#{virtual_home}/app"
 Vagrant.configure("2") do |config|
   config.vm.hostname = "workenv"
   config.vm.box = "ubuntu/xenial64"
+
+  # enable with vagrant-disksize
+  # config.disksize.size = '20GB'
   config.vm.network "forwarded_port", guest: 80, host: 10000, host_ip: "127.0.0.1"
   config.vm.network "forwarded_port", guest: 3000, host: 30000, host_ip: "127.0.0.1"
 
@@ -47,16 +50,16 @@ Vagrant.configure("2") do |config|
   config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = 'cookbooks'
     chef.add_recipe "instance::configure"
-    # chef.add_recipe "packages::essential"
-    # chef.add_recipe "packages::extra"
-    # chef.add_recipe "nginx::install"
-    # chef.add_recipe "nginx::configure"
-    # chef.add_recipe "rails::rbenv"
-    # chef.add_recipe "rails::install"
-    # chef.add_recipe 'app::deploy'
-    # chef.add_recipe 'databases::mongodb'
-    # chef.add_recipe 'puma::configure'
-    # chef.add_recipe 'puma::start'
+    chef.add_recipe "packages::essential"
+    chef.add_recipe "packages::extra"
+    chef.add_recipe "nginx::install"
+    chef.add_recipe "nginx::configure"
+    chef.add_recipe "rails::rbenv"
+    chef.add_recipe "rails::install"
+    chef.add_recipe 'app::deploy'
+    chef.add_recipe 'databases::mongodb'
+    chef.add_recipe 'puma::configure'
+    chef.add_recipe 'puma::start'
 
     chef.json = {
       "user" => "ubuntu",

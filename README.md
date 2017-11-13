@@ -30,6 +30,10 @@ This project create and configure virtual machine to run Rails App.
 
 To see more commands you can run `vagrant --help`.
 
+##### Custom disk space with vagrant plugin
+
+If you want to change default space disk(10GB), you can to use `vagrant plugin install vagrant-disksize`. Since terminal run `vagrant plugin install vagrant-disksize` and uncomment `config.disksize.size = '20GB'` on Vagrantfile.
+
 #### Chef Recipes
 
 ##### Description
