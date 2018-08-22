@@ -1,6 +1,6 @@
 #  Work Environment to RubyOnRails
 
-This project create and configure virtual machine to run Rails App.
+This project creates and configures a virtual machine to run Rails App.
 
 #### Vagrant
 
@@ -14,17 +14,17 @@ This project create and configure virtual machine to run Rails App.
 
 `host_app` location app code on the host machine, this folder is shared to the virtual machine.
 
-`virtual_home` Home path in virtual machine.
+`virtual_home` Home path in a virtual machine.
 
-`virtual_app` App path in virtual machine.
+`virtual_app` App path in a virtual machine.
 
 ##### Commands
 
-`vagrant up` Install and configure machine.
+`vagrant up` Install and configure the machine.
 
 `vagrant provision` Run recipes into machine.
 
-`vagrant ssh` Log-in in machine.
+`vagrant ssh` Log-in in the machine.
 
 `vagrant destroy` Delete machine.
 
